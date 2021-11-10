@@ -1,7 +1,7 @@
 #------------------------------------------------------
 #!/bin/bash
-#Filename: Volatility-Install-Debian
-#Version: 1.0
+#Filename: Volatility-Install-v1.1
+#Version: 1.1
 #Creation: Nov 2021
 #Author: TheProtag0nist
 
@@ -28,7 +28,7 @@ echo "${BOLD}${OK}End of Stage 1.${RESET}"
 # Installing Pip for Python2 (Required for setting up modules)
 echo "${BOLD}${INFO}Beginning Stage 2: Preparing Pip.${RESET}"
 	sudo apt install -y python2 python2.7-dev libpython2-dev python2-dev
-	sudo curl https://bootstrap.pypa.io/pip/2.7/get-pip.py --output get-pip.py
+	sudo wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
 	sudo python2 get-pip.py
 	sudo python2 -m pip install -U setuptools wheel
 	sudo pip2 install --upgrade setuptools 
@@ -50,7 +50,7 @@ echo "${BOLD}${INFO}Beginning Stage 4: Setting up Volatility.${RESET}"
 #Installing Volatility
 	echo "${BOLD}${INFO}Beginning Volatility package installation...${RESET}"
 	cd volatility
-	sudo python setup.py install
+	sudo python2 setup.py install
 echo "${BOLD}${OK}End of Stage 4.${RESET}"
 
 echo "${BOLD}${OK}Volatility installation complete.${RESET}"
